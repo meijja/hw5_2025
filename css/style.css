@@ -1,0 +1,156 @@
+/* animate logo*/
+#logo {
+    animation-name: logo;
+    animation-duration: 5s;
+}
+
+@keyframes logo {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+/*edit body font & background*/
+body {
+    font-family: "Poppins", sans-serif, serif;
+    background-image: url(/images/concrete_seamless.png);
+    background-color: #f1f1f1;
+}
+
+/* align navbar */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* style links */
+a {
+    color: blue;
+}
+
+/* style header elements that are direct children of a card class */
+.card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0 0;
+}
+
+/* style cards & their alignment */
+.card {
+    border-radius: 50px 50px 0 0;
+    flex-basis: 450px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* style gallery */
+.gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    /* style navbar */
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* change card size */
+    .card {
+        flex-basis: 275px;
+    }
+
+    /* make navbar sticky */
+    body > header:first-of-type {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* Don't animate logo if reduced-motion */
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+        width: 475px;
+   }
+}
+
+/* Modify view when page is printed in portrait mode. */
+@media print {
+    /* edit body font and background */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    /* space navbar links */
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* align items on bottom */
+    .pricing {
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    /* edit cards */
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    /* No part of the gallery should be visible. */
+    .gallery, #gallery {
+        display: none;
+    }
+
+    /* Add the thumbs up entity */
+    /* Get list elt, then get the 2nd item */
+    .card li:nth-of-type(2):after{
+        content: "👍";
+    }
+}
