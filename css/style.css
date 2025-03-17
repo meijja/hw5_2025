@@ -5,6 +5,7 @@
 }
 
 @keyframes logo {
+    /* logo changes in size and opacity */
     0% {
         width: 25px;
         opacity: 0;
@@ -19,7 +20,7 @@
 body {
     font-family: "Poppins", sans-serif, serif;
     background-image: url(../images/concrete_seamless.png);
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* backup */
 }
 
 /* align navbar */
@@ -34,7 +35,7 @@ header {
     flex-direction: column;
 }
 
-/* style links */
+/* make links same color even after visited */
 a {
     color: blue;
 }
@@ -101,15 +102,15 @@ a {
     }
 }
 
-/* Don't animate logo if reduced-motion */
-@media screen and (prefers-reduced-motion: reduce) {
+/* don't animate logo if reduced-motion */
+@media (prefers-reduced-motion: reduce) {
     #logo {
         animation: none;
         width: 475px;
    }
 }
 
-/* Modify view when page is printed in portrait mode. */
+/* modify view when page is printed in portrait mode. */
 @media print {
     /* edit body font and background */
     body {
@@ -130,7 +131,7 @@ a {
         align-items: center;
     }
 
-    /* align items on bottom */
+    /* align card items on their bottom */
     .pricing {
         align-items: flex-end;
         justify-content: center;
@@ -143,13 +144,13 @@ a {
         flex-basis: 325px;
     }
 
-    /* No part of the gallery should be visible. */
+    /* no part of the gallery should be visible. */
     .gallery, #gallery {
         display: none;
     }
 
-    /* Add the thumbs up entity */
-    /* Get list elt, then get the 2nd item */
+    /* add the thumbs up entity */
+    /* first get list elements, then get the 2nd item and add the emoji after it */
     .card li:nth-of-type(2):after{
         content: "👍";
     }
