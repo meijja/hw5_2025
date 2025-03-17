@@ -18,7 +18,7 @@
 /*edit body font & background*/
 body {
     font-family: "Poppins", sans-serif, serif;
-    background-image: url(/images/concrete_seamless.png);
+    background-image: url(../images/concrete_seamless.png);
     background-color: #f1f1f1;
 }
 
